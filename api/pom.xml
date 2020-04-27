@@ -50,7 +50,7 @@
         </dependency>
         <dependency>
             <groupId>com.broadleafcommerce</groupId>
-            <artifactId>broadleaf-boot-starter-hsql-database</artifactId>
+            <artifactId>broadleaf-boot-starter-database</artifactId>
         </dependency>
         <dependency>
             <groupId>com.broadleafcommerce</groupId>
@@ -79,6 +79,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
         </dependency>
     </dependencies>
 

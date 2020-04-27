@@ -30,6 +30,7 @@
     </repositories>
 
     <properties>
+        <!--suppress UnresolvedMavenProperty -->
         <debug.args>-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=${debug.port}</debug.args>
         <boot.jvm.memory>-Xmx1536M</boot.jvm.memory>
         <boot.jvm.args>${boot.jvm.memory} ${debug.args}</boot.jvm.args>
@@ -72,6 +73,7 @@
         <profile>
             <id>jrebel</id>
             <properties>
+                <!--suppress UnresolvedMavenProperty -->
                 <boot.jvm.args>${boot.jvm.memory} ${debug.args} ${jrebel.agent.args}</boot.jvm.args>
             </properties>
         </profile>

@@ -140,7 +140,8 @@ public class SiteSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
             .requiresChannel()
                 .antMatchers("/","/**")
-                .requiresSecure()
+                //TODO change to requiresSecure
+                .requiresInsecure()
                 .and()
             .logout()
                 .invalidateHttpSession(true)

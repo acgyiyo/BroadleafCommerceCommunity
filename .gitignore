@@ -13,3 +13,5 @@ bin/
 **/*externalToolBuilders
 .sts4-cache
 data
+admin/nbactions.xml
+admin/nb-configuration.xml

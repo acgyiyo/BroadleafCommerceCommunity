@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Admin run" type="BatchConfigurationType" factoryName="Batch">
+    <option name="INTERPRETER_OPTIONS" value="" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/admin" />
+    <option name="PARENT_ENVS" value="true" />
+    <module name="" />
+    <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run.bat" />
+    <option name="PARAMETERS" value="" />
+    <method v="2">
+      <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/admin/pom.xml" goal="dependency:copy@copy-agent" />
+      <option name="MakeProject" enabled="true" />
+    </method>
+  </configuration>
+</component>

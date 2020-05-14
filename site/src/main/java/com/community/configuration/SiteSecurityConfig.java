@@ -67,6 +67,7 @@ public class SiteSecurityConfig extends WebSecurityConfigurerAdapter {
             List<String> excludedRequestPatterns = new ArrayList<>();
             excludedRequestPatterns.add("/sample-checkout/**");
             excludedRequestPatterns.add("/hosted/sample-checkout/**");
+            excludedRequestPatterns.add("/contactus/success/**");
             securityFilter.setExcludedRequestPatterns(excludedRequestPatterns);
             return securityFilter;
         }

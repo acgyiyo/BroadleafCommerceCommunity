@@ -1,5 +1,7 @@
 package com.community.controller.contactus;
 
+import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
 import org.broadleafcommerce.common.email.domain.EmailTargetImpl;
 import org.broadleafcommerce.common.email.service.EmailService;
 import org.broadleafcommerce.common.email.service.info.EmailInfo;
@@ -13,6 +15,7 @@ import java.util.HashMap;
 
 import javax.annotation.Resource;
 
+@Slf4j
 @Controller("blContactUsController")
 public class ContactUsController {
 
@@ -26,28 +29,27 @@ public class ContactUsController {
 	public String sendConfirmationEmail(@RequestParam("name") String name,
 			@RequestParam("emailAddress") String emailAddress,
 			@RequestParam("comments") String comments) {
-		HashMap<String, Object> vars = new HashMap<String, Object>();
+		HashMap<String, Object> vars = new HashMap<>();
 		vars.put("name", name);
 		vars.put("comments", comments);
 		vars.put("emailAddress", emailAddress);
-		
+
 		EmailInfo emailInfo = new EmailInfo();
-		
+
 		emailInfo.setFromAddress(emailAddress);
 		emailInfo.setSubject("Message from " + name);
 		emailInfo.setMessageBody("Name: " + name + "<br />Email: " + emailAddress + "<br />Comments: " + comments);
 		EmailTargetImpl emailTarget = new EmailTargetImpl();
-		
+
 		emailTarget.setEmailAddress(targetEmailAddress);
 		try {
 			emailService.sendBasicEmail(emailInfo, emailTarget, vars);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.error("error sending contactus email",e);
 			return "redirect:/contactus";
 
 		}
-		
+
 		return "contactus/success";
 
 	}
